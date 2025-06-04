@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Account</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/UD7CEz6/bank-bank-building-branch_vyks9ofi_thumbnail-1080_01.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      position: relative;
+      animation: fadeIn 1s ease-in;
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 50, 0.5);
+      z-index: 0;
+    }
+
+    h1 {
+      z-index: 1;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      animation: slideIn 1s ease-out;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    a {
+      z-index: 1;
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #1e3c72;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 40px;
+      font-size: 1.1em;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      animation: bounceIn 1.2s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    a:hover {
+      background-color: #1e3c72;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+        text-align: center;
+      }
+      a {
+        width: 80%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Welcome to Bank Portal</h1>
+<a href="/register">Register Here</a>
+<a href="/login">Log In</a>
+</body>
+</html>
