@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Account</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right top, #0f2027, #203a43, #2c5364); /* Dark banking style */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1s ease-in;
+      overflow: hidden;
+    }
+
+    .form-glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 18px;
+      padding: 40px 35px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      animation: slideUp 0.9s ease-out;
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2em;
+      color: #ffffff;
+      animation: zoomIn 1s ease;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      font-size: 1em;
+      outline: none;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus  {
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+      transform: scale(1.02);
+    }
+
+    input[type="submit"] {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(to right, #3a6073, #16222a);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 500px) {
+      .form-glass {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="form-glass">
+  <h2>Add Account</h2>
+  <form action="/save" method="post">
+    <label>Account Number:</label>
+    <input type="number" name="accno" required>
+
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Balance:</label>
+    <input type="number" name="bal" required>
+
+    <label>PIN:</label>
+    <input type="password" name="pin" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <input type="submit" value="Save Account">
+  </form>
+</div>
+</body>
+</html>
